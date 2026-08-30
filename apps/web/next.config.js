@@ -2,8 +2,20 @@
 
 const { withExpo } = require("@expo/next-adapter");
 
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+const repoBasePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 module.exports = withExpo({
   reactStrictMode: false,
+  ...(isGitHubPages
+    ? {
+        output: "export",
+        trailingSlash: true,
+        ...(repoBasePath
+          ? { basePath: repoBasePath, assetPrefix: repoBasePath }
+          : {}),
+      }
+    : {}),
 
   compiler: {
     // Remove console.log in production builds
@@ -16,6 +28,7 @@ module.exports = withExpo({
   },
 
   images: {
+    unoptimized: isGitHubPages,
     remotePatterns: [
       {
         protocol: "https",
