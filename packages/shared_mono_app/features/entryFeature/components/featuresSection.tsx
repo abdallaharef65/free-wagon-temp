@@ -60,20 +60,20 @@ export function FeaturesSection() {
           {features.map(({ key, icon: Icon, title }, index) => (
             <View
               key={key}
-              className={isWeb ? "h-full min-h-[152px]" : landingCardGridItem("w-full md:w-1/2 lg:w-1/3")}
+              className={isWeb ? "w-full" : landingCardGridItem("w-full md:w-1/2 lg:w-1/3")}
             >
               <AnimatedSection
                 delay={150 + index * 70}
                 variant="scale"
-                className={isWeb ? "h-full w-full" : landingCardShell}
+                className={landingCardShell}
               >
                 <HoverBorderSurface
-                  className={`rounded-3xl p-6 h-full min-h-[152px] ${landingCardSurface} ${isWeb ? "transition-transform duration-300 hover:scale-[1.02]" : ""}`}
+                  className={`rounded-3xl p-6 min-h-[152px] ${landingCardSurface} ${isWeb ? "transition-transform duration-300 hover:scale-[1.02]" : ""}`}
                 >
                   <View className="w-11 h-11 rounded-xl items-center justify-center mb-4 shrink-0" style={{ backgroundColor: NEURAL.cyanSoft }}>
                     <Icon size={20} color={NEURAL.cyan} />
                   </View>
-                  <Text className="text-base font-bold leading-6 flex-1" style={{ color: NEURAL.text }}>
+                  <Text className="text-base font-bold leading-6" style={{ color: NEURAL.text }}>
                     {title}
                   </Text>
                 </HoverBorderSurface>

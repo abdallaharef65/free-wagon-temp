@@ -127,9 +127,6 @@ function AnimatedSectionWeb({
           opacity,
           transform: [{ translateX }, { translateY }, { scale }],
           width: "100%",
-          alignSelf: "stretch",
-          flex: 1,
-          minHeight: "100%",
         }}
       >
         {content}
