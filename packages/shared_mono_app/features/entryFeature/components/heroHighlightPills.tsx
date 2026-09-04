@@ -4,9 +4,9 @@ import { NEURAL, neuralAlpha } from "ui/theme/neuralRuntime";
 import { isWeb } from "./platformStyles";
 
 const HIGHLIGHTS = [
-  { label: "Free on ThemeWagon", accent: NEURAL.cyan },
-  { label: "Full source code", accent: NEURAL.violet },
-  { label: "Android APK", accent: NEURAL.positive },
+  { label: "One shared codebase", accent: NEURAL.cyan },
+  { label: "Free on ThemeWagon", accent: NEURAL.violet },
+  { label: "Full source code", accent: NEURAL.positive },
   { label: "Premium upgrade", accent: NEURAL.violet },
 ] as const;
 

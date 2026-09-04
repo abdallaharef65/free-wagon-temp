@@ -27,10 +27,13 @@ export function HeroSection() {
       <Pressable className="w-full max-w-[900px] mx-auto px-3 sm:px-4 md:px-6 items-center pt-4 sm:pt-6 md:pt-8">
         <AnimatedSection delay={0} variant="fadeUp">
           <View
-            className="mb-4 sm:mb-6 self-center rounded-full px-3 sm:px-4 py-1.5 border max-w-full"
+            className="mb-5 sm:mb-7 self-center rounded-full px-5 sm:px-7 py-2.5 sm:py-3 border-2 max-w-full"
             style={{ backgroundColor: NEURAL.cyanSoft, borderColor: NEURAL.borderGlow }}
           >
-            <Text className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-center" style={{ color: NEURAL.cyan }}>
+            <Text
+              className="text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.18em] sm:tracking-[0.22em] text-center"
+              style={{ color: NEURAL.cyan }}
+            >
               Turborepo · Next.js · Expo
             </Text>
           </View>
@@ -38,14 +41,14 @@ export function HeroSection() {
 
         <AnimatedSection delay={80} variant="fadeUp">
           <Text className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-center px-1" style={{ color: NEURAL.text }}>
-            One repo.{"\n"}
-            <Text style={{ color: NEURAL.violet }}>Web and mobile.</Text>
+            Write once.{"\n"}
+            <Text style={{ color: NEURAL.violet }}>Web and mobile update together.</Text>
           </Text>
         </AnimatedSection>
 
         <AnimatedSection delay={160} variant="fadeUp">
-          <Text className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-6 sm:leading-7 text-center max-w-[600px] px-1" style={{ color: NEURAL.textSecondary }}>
-            A production-ready monorepo layout — shared packages, two app targets, and Turborepo scripts from the root.
+          <Text className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-6 sm:leading-7 text-center max-w-[680px] px-1" style={{ color: NEURAL.textSecondary }}>
+            One codebase for web and mobile — not two separate apps. Change a screen or component once, and it updates on both.
           </Text>
         </AnimatedSection>
 

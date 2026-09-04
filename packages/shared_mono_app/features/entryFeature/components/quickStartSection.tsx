@@ -12,24 +12,25 @@ const STEPS = [
   {
     step: "01",
     title: "Clone & install",
-    description: "One `yarn install` at the repo root installs every app and package in the workspace.",
-    command: "yarn install",
+    description: "Install once at the repo root. That covers the Next.js app, the Expo app, and every shared package.",
+    commands: ["yarn install"],
     icon: Copy,
     accent: NEURAL.cyan,
   },
   {
     step: "02",
-    title: "Run web or mobile",
-    description: "Start Next.js for the landing page, or Expo for iOS and Android from the same codebase.",
-    command: "yarn web",
+    title: "Run web and mobile",
+    description:
+      "Stay in the same folder. yarn web starts Next.js at localhost:3000. yarn android or yarn ios starts Expo. Same shared code — pick the platform you want to preview.",
+    commands: ["yarn web", "yarn android", "yarn ios"],
     icon: Terminal,
     accent: NEURAL.violet,
   },
   {
     step: "03",
     title: "Extend packages",
-    description: "Add features under `packages/shared_mono_app` and import them from both app targets.",
-    command: "yarn api myFeature",
+    description: "Add features under packages/shared_mono_app and import them from both apps — no second repo.",
+    commands: ["yarn api myFeature"],
     icon: Rocket,
     accent: NEURAL.positive,
   },
@@ -41,8 +42,8 @@ export function QuickStartSection() {
       <View className="w-full max-w-[1100px] mx-auto">
         <SectionHeading
           badge="Get started"
-          title="Up and running in three steps"
-          subtitle="No separate repos, no duplicate installs — the monorepo workflow ThemeWagon visitors can try immediately."
+          title="How to run web and mobile"
+          subtitle="One install. Then start the website, the phone app, or both — from the same repository."
         />
 
         <View className={landingCardGrid}>
@@ -76,16 +77,21 @@ export function QuickStartSection() {
                       >
                         {item.description}
                       </Text>
-                      <View
-                        className="rounded-xl px-3 py-2.5 border mt-auto"
-                        style={{ backgroundColor: NEURAL.canvas, borderColor: NEURAL.border }}
-                      >
-                        <Text
-                          className="text-xs font-mono"
-                          style={{ color: NEURAL.cyan, ...(isWeb ? { fontFamily: "monospace" } : {}) }}
-                        >
-                          {item.command}
-                        </Text>
+                      <View className="gap-2 mt-auto">
+                        {item.commands.map((command) => (
+                          <View
+                            key={command}
+                            className="rounded-xl px-3 py-2.5 border"
+                            style={{ backgroundColor: NEURAL.canvas, borderColor: NEURAL.border }}
+                          >
+                            <Text
+                              className="text-xs font-mono"
+                              style={{ color: NEURAL.cyan, ...(isWeb ? { fontFamily: "monospace" } : {}) }}
+                            >
+                              {command}
+                            </Text>
+                          </View>
+                        ))}
                       </View>
                     </View>
                   </HoverBorderSurface>

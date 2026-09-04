@@ -8,7 +8,7 @@ import { NEURAL } from "ui/theme/neuralRuntime";
 import { isWeb, landingCardGrid, landingCardGridItem } from "./platformStyles";
 
 const STATS = [
-  { value: "2", label: "App targets", sub: "Web + Mobile", icon: Smartphone, accent: NEURAL.cyan },
+  { value: "2", label: "App targets", sub: "Same code, not separate apps", icon: Smartphone, accent: NEURAL.cyan },
   { value: "5", label: "Shared packages", sub: "ui · state · api", icon: Package, accent: NEURAL.violet },
   { value: "1", label: "Root install", sub: "Yarn workspaces", icon: Layers, accent: NEURAL.positive },
   { value: "3", label: "Min to run", suffix: " min", sub: "Clone to localhost", icon: Zap, accent: NEURAL.cyan },
